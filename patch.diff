@@ -1,0 +1,9 @@
+--- a/node_modules/@vitest/browser/dist/index.js
++++ b/node_modules/@vitest/browser/dist/index.js
+@@ removeCDPHandler @@
+ 	removeCDPHandler(rpcId) {
+-		this.cdpHandlers.delete(rpcId);
++		const h = this.cdpHandlers.get(rpcId);
++		this.cdpHandlers.delete(rpcId);
++		Promise.resolve(h).then(x => x?.session?.detach?.()).catch(() => {});
+ 	}

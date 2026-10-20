@@ -1,0 +1,13 @@
+{
+  "name": "vitest-cdp-detach-repro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "repro": "node count.mjs"
+  },
+  "devDependencies": {
+    "@vitest/browser-playwright": "5.0.5",
+    "playwright": "1.64.1",
+    "vitest": "5.0.5"
+  }
+}
